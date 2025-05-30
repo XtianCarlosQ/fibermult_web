@@ -6,7 +6,9 @@ import Config from './pages/Config.jsx';
 import Terminal from './components/Terminal.jsx';
 
 export default function App() {
+  console.log('App.jsx: App component rendering');
   const [page, setPage] = useState('home');
+  console.log('App.jsx: useState initialized, page:', page);
   return (
     <div className="flex h-screen">
       {/* Navegación lateral */}

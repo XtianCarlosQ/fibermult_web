@@ -20,7 +20,7 @@ services:
     volumes:
       # 📂 Código fuente desde NAS con bind mount
       - type: bind
-        source: /mnt/nas/PROYECTOS/Web/fibermult_web/fibermult_react_docker
+        source: .
         target: /app
         consistency: cached
 
