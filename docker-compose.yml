@@ -1,0 +1,31 @@
+services:
+  vite:
+    # Imagen oficial ligera con Node 22 + Alpine 3.21
+    image: node:22-alpine3.21
+    working_dir: /app
+
+    # ① instala dependencias        ② lanza Vite accesible desde la LAN
+    command: >
+      sh -c "npm install --legacy-peer-deps &&
+             npm run dev -- --host 0.0.0.0"
+
+    environment:
+      # Requerido para hot reload en NFS (NAS)
+      CHOKIDAR_USEPOLLING: "1"
+      CHOKIDAR_INTERVAL: "300"   # 300 ms
+
+    ports:
+      - "5173:5173"          # http://localhost:5173/
+
+    volumes:
+      # 📂 Código fuente desde NAS con bind mount
+      - type: bind
+        source: /mnt/nas/PROYECTOS/Web/fibermult_web/fibermult_react_docker
+        target: /app
+        consistency: cached
+
+      # B. Dependencias (volumen interno ext4, más rápido y sin problemas de symlinks)
+      - node_deps:/app/node_modules
+
+volumes:
+  node_deps:                # sin driver_opts → gestionado por Docker Desktop

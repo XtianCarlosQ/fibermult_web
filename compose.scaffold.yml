@@ -1,0 +1,7 @@
+services:
+  scaffold:
+    image: node:22-alpine3.21
+    working_dir: /app
+    command: npx --yes create-vite@latest . -- --template react
+    volumes:
+      - .:/app   # solo bind-mount, nada más
