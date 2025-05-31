@@ -15,11 +15,12 @@ export default function App() {
       <Sidebar page={page} setPage={setPage} />
 
       {/* Contenido principal y Terminal */}
-      <div className="flex flex-col flex-1">
-        <main className="flex-1 p-6 overflow-auto">
+      <div className="flex flex-col flex-1 ">
+        <main className="flex-1 p-6 my-5 mr-5 ml-3 mb-10 rounded-2xl shadow-sci-fi-glow bg-sci-fi-bg/50">
           {page === 'home' ? <Home /> : <Config />}
+          
         </main>
-        <Terminal />
+        
       </div>
     </div>
   );

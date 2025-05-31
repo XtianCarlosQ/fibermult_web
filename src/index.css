@@ -2,15 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* estillo base del body */
 body {
-  background: #181e2a;
+  @apply bg-sci-fi-bg text-white;
 }
+
 .bg-sci-fi-bg {
-  background: #1a2035;
+  background: #141828;
 }
 .text-sci-fi-blue {
-  color: #21e6c1;
+  color: #2187e6;
 }
 .shadow-sci-fi-glow {
-  box-shadow: 0 0 10px #21e6c1, 0 0 40px #21e6c1;
+  box-shadow: 0 0 5px #21c2e6, 0 0 10px #2187e6;
 }
+
+.shadow-sci-fi-glow-hover {
+  box-shadow: 0 0 10px #21c2e6, 0 0 10px #2187e6;
+}
+
+/* cristal semitransparente con blur */
+/* .glass-panel {
+  @apply bg-glass-bg backdrop-blur-md shadow-glass rounded-xl border border-white/20;
+} */
