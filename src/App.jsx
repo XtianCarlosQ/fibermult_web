@@ -16,7 +16,7 @@ export default function App() {
 
       {/* Contenido principal y Terminal */}
       <div className="flex flex-col flex-1 ">
-        <main className="flex-1 p-6 my-5 mr-5 ml-3 mb-10 rounded-2xl shadow-sci-fi-glow bg-sci-fi-bg/50">
+        <main className="flex-1 p-6 my-5 mr-5 ml-3 mb-12 rounded-2xl shadow-sci-fi-glow bg-sci-fi-bg/50">
           {page === 'home' ? <Home /> : <Config />}
           
         </main>
